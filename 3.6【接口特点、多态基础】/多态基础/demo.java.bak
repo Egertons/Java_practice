@@ -1,0 +1,13 @@
+/*
+多态:
+		可以理解为事物存在的多种体现形态。
+		这里主要讲关于“对象”的多态性，当然其他的组织也有多态性，
+				比如，函数的重载与复写。
+*/
+public class demo
+{
+	public static void main(String[] args)
+	{
+		
+	}
+}

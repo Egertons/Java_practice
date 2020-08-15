@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将类型“newkno.Linklist_demo”重命名为“LinkedList_demo”&#x0D;&#x0A;－ 原始项目：“7.6”&#x0D;&#x0A;－ 原始元素：“newkno.Linklist_demo”&#x0D;&#x0A;－ 重命名的元素：“newkno.LinkedList_demo”&#x0D;&#x0A;－ 更新对已重构元素的引用&#x0D;&#x0A;－ 更新注释和字符串中出现的文本" description="重命名类型“Linklist_demo”" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;newkno{Linklist_demo.java[Linklist_demo" matchStrategy="1" name="LinkedList_demo" qualified="false" references="true" similarDeclarations="false" stamp="1593999435558" textual="false" version="1.0"/>
+</session>

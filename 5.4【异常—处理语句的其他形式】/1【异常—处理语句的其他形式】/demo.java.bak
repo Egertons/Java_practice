@@ -1,0 +1,39 @@
+public class demo
+{
+	public static void main(String[] args)
+	{
+		
+	}
+}
+//第一种格式：
+try
+{
+	
+}
+catch()
+{
+	
+}
+//第二种格式：
+try
+{
+	
+}
+catch()
+{
+	
+}
+finally
+{
+	
+}
+
+//第三种格式：
+try
+{
+	
+}
+finally
+{
+	//这里并没有写catch，所以问题并没有得到解决，需要向外声明，向上递归处理解决。但是这里的finally的意义在于“关闭资源连接”。如数据库连接等。
+}

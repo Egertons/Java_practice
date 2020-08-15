@@ -1,0 +1,83 @@
+public class demo
+{
+	public static void main(String[] args)
+	{
+		System.out.println("\nHello World");
+	}
+}
+
+
+
+/*
+关于组合的笔记；
+
+聚集：  //是一种与继承相同等级的概念
+
+		组合：更多强调的是事务与事务，部件与部件间共同组成一个体系，那么这些部件间的关系就是组合关系。
+
+		聚合：聚合更强调于：类似班级中的学生和班级的联系
+						那么这时班级和学生的关系就是聚合关系。
+
+聚合关系不如组合关系紧密。
+
+*/
+
+
+/*
+主要体现的是子父类出现后，类中成员的变化特点。
+
+类中成员：
+1.变量
+		引入新的关键字  super 可以准确在子类中描述父类的常量。
+2.函数
+3.构造函数
+
+*/
+
+//运用单例设计模式
+class fu
+{
+ static	int num = 9;
+}
+
+
+
+class zi  extends fu
+{
+	private zi(){};
+	private static zi hh = new zi();
+	public static zi zhan()
+	{
+		return hh;
+	}
+	
+	private static int num = 10;
+	
+	public void show()
+	{
+		System.out.println(super.num+"   "+this.num);
+	}
+}
+
+
+class zhu
+{
+	public static void main(String[] args)
+	{
+		zi xin = zi.zhan();
+		xin.show();
+	}
+}
+
+
+
+
+/*
+在继承关系中，父类中的函数方法要是被私有化的话，子类并不能随意调用，
+		但在外部类和内部类中不是这样（因为它们本身同属一个类）.
+*/
+
+
+
+
+

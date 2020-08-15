@@ -1,0 +1,43 @@
+/*
+异常的由来：
+		问题在现实生活中也是一个具体的事物，也可以通过java类的形式进行描述，并封装成对象。
+		其实就是Java对不正常情况进行描述后的对象体现。
+		
+		对于问题的划分：两种：一种是严重的问题，一种是非严重的问题。
+		
+		对于严重的，java通过Error类来进行描述。
+				对于Error一般不编写针对性的代码对其进行处理。
+		对于非严重的，Java通过Exception类来进行描述。
+				对于Exception可以使用针对性的处理方式进行处理。
+				
+		
+		
+		
+*/
+public class demo
+{
+	public static void main(String[] args)
+	{
+		Tool a = new Tool();
+		int b = a.div(2,0); //故意将除数设置为0，调用异常机制。
+		System.out.println("a="+a);
+	}
+}
+/*
+异常机制：
+	Throwable
+		Error
+			通常出现重大问题：如运行的类不存在或者内存溢出
+			不编写针对代码对其处理
+		Exception
+			在运行时运行出现的一起情况，可以通过try catch finally
+Exception 和 Error 的子类名都是以父类名作为后缀
+*/
+
+class Tool
+{
+	int div(int a,int b)
+	{
+		return a/b;
+	}
+}

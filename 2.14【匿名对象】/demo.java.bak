@@ -1,0 +1,46 @@
+public class demo
+{
+	public static void main(String[] args)
+	{
+		System.out.println("Hello World");
+		Car h = new Car();
+		h.num = 88;
+		h.run();
+		//Car ww = new Car();
+		//ww.run();
+		//可以简写成 如下  匿名对象的形式 
+		new Car().run();//匿名对象的标准写法。
+		/*
+		在匿名对象的语法中，因为每次调用匿名对象都要
+		写new 方法名  所以实际上每次都在新建一个新的对象
+		而不是在调用以前的那个匿名对象。
+		*/
+		/*
+		匿名对象存在的意义在于：
+		优化代码结构、内存空间
+		匿名对象由于属性的原因：执行完就变成垃圾内存
+		故而一般不用匿名对象来修改类内部的参数（没有意义）
+		一般适用于在循环或判断中只是想要查看抑或是打印一下类中的内容
+		而又不想再定义一个新的名字，造成冗长。
+		*/
+		
+	}	
+	public static void show(Car j)
+	//在主类中的方法中的引用数据类型中可以写  对象
+	{
+		
+	}
+}
+
+
+//这个对象类千万不要写到主类里面去~
+//要不然就是静态类引用类型错误了。
+	class Car
+	{
+		String color = "red";
+		int num = 77;
+		void run()
+		{
+			System.out.println(color+num);
+		}
+	}

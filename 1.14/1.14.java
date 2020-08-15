@@ -1,0 +1,17 @@
+class zl144
+{
+	public static void main(String[] args)
+	{
+			short s = 6;
+			s=(short)(s+7);
+		System.out.println(s);
+		System.out.println("Hello World \n\tZL");
+		System.out.println(s!=99);      //一个字符都不能差    System首字母一定要大写的。
+		
+		System.out.println(6&3);           //打印行内可以进行简单的判断动作
+	}
+}
+
+/**
+写代码一定要认真啊，这编译名没注意，调试了好长时间~
+*/

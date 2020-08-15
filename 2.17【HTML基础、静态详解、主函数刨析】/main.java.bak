@@ -1,0 +1,51 @@
+public class main
+{
+	public static void main(String[] arguments)//其中的主函数变量名是唯一的原则上可修改的部分。另  arguments是Java早期版本。
+	{
+		System.out.println(arguments);
+		//事实验证得出结论，JVM在程序运行之初确实向主函数中传参了。而且还是个数组类型。
+		System.out.println(arguments.length);
+		//解析数组实际长度。
+		
+		/*
+		故而，JVM在调用主函数时，传入的是一个字符串数组，长度为0.
+		new String[0];
+		*/ 
+	}
+	public static void main(int x)
+	{
+		//如何不写正常的主函数，也可编译成功，只是JVM找不到程序的入口而已，只识别了几个和主函数相同函数名的重载函数。
+	}
+	public static void main(String[] args,int[] v)
+	{
+		//主函数不可以这么写，但可作为一个普通函数写
+		//其实用到的是函数的基本特性，重载
+		//编译可通过
+	}
+}
+/*
+主函数是一个特殊的函数，
+注意其本质是一个函数。
+	可以被JVM调用，作为程序的入口。
+定义：
+public：代表着该函数的访问权限是最大的。
+static：代表着主函数随着类的加载就已经存在在方法区中。
+void：对主函数没有具体的返回值。
+main：不是关键字，但是其是一个特殊的单词。可以被JVM识别，不能换。
+（String[] args）：函数的参数 参数类型是一个数组，数组中的元素是字符串。也成为字符串类型的数组。
+主函数是固定格式的，虚拟机识别。
+*/
+
+
+
+//在命令行格式中启动该类的同时，可以对其主函数进行传参工作。
+class demo
+{
+	public static void main(String[] args)
+	{
+		for(int x = 0,x < args.length,x+=1)
+		{
+			System.out.println(args[x]);
+		}
+	}
+}

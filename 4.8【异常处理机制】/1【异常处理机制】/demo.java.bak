@@ -1,0 +1,70 @@
+public class demo
+{
+	public static void main(String[] args)
+	{
+		Tools demo = new Tools();
+		/*
+		流程解析：
+		首先，假定程序中有错误部分，如果没有源代码中的异常检测机制的话，
+		被虚拟机所直接调用的主函数就处理不了这个错误，（实际上主函数啥错误也处理不了~）
+		那么，主函数就会把错误信息直接抛给虚拟机底层，虚拟机这时候就会启动“被动式的异常处理机制”
+		来处理这个问题，特点是受用范围很大，处理简单且直接，（直接强制性的停止程序运行，并大致报错给命令台）
+		
+		
+		那么主动式的异常处理机制指的是在源码中的DeBug
+		用try{}代码块来实现功能，其中的流程大致是
+		因为在上述步骤中，最终主函数抛给虚拟机底层的异常实际上是一个异常的封装对象。
+		那么，现在我们知道了大致上哪段代码有错误，用try覆盖住以后，
+		异常的封装对象会直接跳转至catch{}其会自动接收对象，并执行catch{}独有的DeBug代码块
+		
+		
+		注意：
+				这时因为异常的主动处理已结束，异常部分已被主动消除，
+				故而，程序会在catch后面按顺序继续执行。
+		*/
+		try
+		{
+			int h = demo.div(4,0);
+			System.out.println("h="+h);
+		}
+		catch(Exception e)  //Exception e = new ArithmeticException();  实质上是多态，父类引用接收子类对象。
+		{
+			//System.out.println("除零啦");
+			System.out.println(e.getMessage());  //简洁
+			System.out.println(e.toString());    //较为全面
+			e.printStackTrace();                 //最为全面
+		}
+		System.out.println("OVER");
+	}
+}
+/*
+异常的处理：
+		Java提供了特有的语句来进行处理。
+		try
+		{
+				需要被检测的代码;
+		}
+		catch(异常类  变量)
+		{
+				处理异常的代码（处理方式）;
+		}
+		finally
+		{
+				一定会执行的语句;
+		}
+		
+对捕获到的异常对象进行常见的方法操作：
+			String getMessage();  获取异常的信息
+			toString();   打印异常的字符串表现形式。
+			printStackTrace();  打印堆栈中的跟踪信息。
+					注意：这个方法是没有返回值类型的（void）
+							故而，不要放在打印语句中。
+*/
+
+class Tools
+{
+	int div(int a,int b)
+	{
+		return a/b;
+	}
+}

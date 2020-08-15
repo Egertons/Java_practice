@@ -1,0 +1,36 @@
+public class demo
+{
+	public static void main(String[] args)
+	{
+		//其中的Car是一个新建的类类型。
+		Car hh = new Car();  //类类型变量指向对象（实体）堆内存。
+		/*
+		实际上也是在新创建一个新类型的时候在堆内存中新建
+		一个区域，按照类定义模板的要求开始创建新的堆内存，
+		此时变量与堆内存中的联系依然靠堆内存地址值来进行赋值。
+		*/
+		//需求：将已有车的颜色改成蓝色，指挥该对象做使用，
+		//在Java中的指挥方式是：对象.对象成员=修改量；
+		hh.color = "宝石蓝";
+		System.out.println(hh.color);
+		//System.out.println(hh.run());    求正确写法。
+	}
+	
+}
+
+
+//新建的类类型   
+//需要注意的是，假如这个类不需要执行只是定义一个模板
+//那就不需要写主函数
+class Car
+{
+	//描述颜色
+	String color = "红色";
+	//描述轮胎数
+	int num = 4;
+	//描述行为
+	void run()
+	{
+		System.out.println(color+"……"+num);
+	}
+}

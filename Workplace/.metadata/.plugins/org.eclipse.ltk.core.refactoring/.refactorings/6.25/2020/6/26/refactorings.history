@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将包“练习”重命名为“复习”&#x0D;&#x0A;－ 原始项目：“6.25”&#x0D;&#x0A;－ 原始元素：“6.25/src/练习”&#x0D;&#x0A;－ 重命名的元素：“6.25/src/复习”&#x0D;&#x0A;－ 更新对已重构元素的引用&#x0D;&#x0A;－ 更新注释和字符串中出现的文本" description="重命名包“练习”" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;练习" name="复习" qualified="false" references="true" stamp="1593047940814" textual="false" version="1.0"/>
+</session>

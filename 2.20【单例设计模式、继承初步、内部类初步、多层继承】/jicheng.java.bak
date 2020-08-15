@@ -1,0 +1,31 @@
+/*
+继承：
+1.提高了代码的复用性。
+2.让类与类之间产生了关系，有了这层关系，才有了多态的特性。
+*/
+class jicheng   //父类  又称  超类
+{
+	String name;
+	int age;
+}
+
+
+//子类
+class student  extends jicheng  //继承
+{
+	void study()
+	{
+		System.out.println("good study");
+	}
+}
+
+
+
+//子类
+class worker  extends jicheng  //继承
+{
+	void work()
+	{
+		System.out.println("good work");
+	}
+}

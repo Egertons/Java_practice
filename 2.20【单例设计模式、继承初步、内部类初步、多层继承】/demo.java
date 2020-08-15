@@ -1,0 +1,55 @@
+
+/*
+关于单利设计模式的尝试练习（饿汉式）
+
+单例设计模式中多用第一种饿汉式，第二种由于多了一步if判断
+赋值的过程，故而程序的安全性与稳定性较差。
+
+在单例设计模式中，，无论调用多少次方法函数，在栈堆内存指向
+方面一定是一个或多个栈常量指向一个堆内存对象。
+
+思想总结：
+在主函数中以前怎么写现在还怎么写。
+当需要将该事务的对象保证内存唯一性的时候，就将工具类中
+套用单例设计模式即可。
+
+*/
+
+public class demo
+{
+	public static void main(String[] args)
+	{
+		
+		//其实有三个栈内存指向该类的堆内存对象  jj/kk/hh
+		lianxi jj = lianxi.getInstance();
+		lianxi kk = lianxi.getInstance();
+		kk.setNum(39);
+		System.out.println(jj.getNum());
+	}
+}
+
+class lianxi
+{
+	private lianxi()
+	{
+		
+	}
+	
+	private static int num;
+	public void setNum(int num)
+	{
+		this.num = num;
+	}
+	public int getNum()
+	{
+		return num;
+	}
+	
+	private static lianxi hh = new lianxi();
+	
+	public static lianxi getInstance()
+	{
+		return hh;
+	}
+	
+}

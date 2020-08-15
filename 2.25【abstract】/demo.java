@@ -1,0 +1,70 @@
+public class demo
+{
+	public static void main(String[] args)
+	{
+			System.out.println("\nHello World");	
+			bstu jj = new bstu();
+			jj.study();
+	}
+}
+
+abstract class stu      //抽象方法必须存放在抽象类中
+{
+	abstract void study();
+	   //abstract意为抽象    关键字
+	abstract void hu();//   子类必须重写抽象类中所有的抽象方法，要不然在建立子类的对象时，由于子类继承了父抽象类所有的方法（包括抽象方法），未被重写的抽象方法就有溢出的风险。
+	//注意final和abstract 不能同时存在，因为abstract不能实例化（没有构造方法），需要有子类来实现，而final为最终的，修饰类时表示该方法没有子类，故而矛盾。
+	void ww()       //抽象类中可以写非抽象方法
+	{
+		System.out.println("\nHello World");	
+	}
+}
+
+class bstu extends stu
+{
+	void study()
+	{
+		System.out.println("base study");
+	}
+	void hu(){}//这也算重写（本质不同，这个有内容为空）
+}
+
+class advstu extends stu
+{
+	void study()
+	{
+		System.out.println("adv study");
+	}
+	void hu(){}//这也算重写（本质不同，这个有内容为空）
+}
+
+/*
+抽象类的特点：
+1.抽象方法必须定义在抽象类中。
+2.抽象方法和抽象类都必须被abstract关键字修饰。
+3.抽象类不可以用new创建对象，因为调用方法没意义。
+4.抽象类中的方法要被使用，必须由子类复写其所有的抽象方法后，建立子类对象调用。
+		如果子类只覆盖了部分抽象方法，那么子类还是一个抽象类。
+*/
+
+
+class j
+{
+	static void hh(){}
+}
+//注意这样写是可以被调用的，因为本质不同，这个是有方法体，只不过为空罢了。
+class l 
+{
+	public static void main(String[] args)
+	{
+		j.hh();
+	}
+}
+
+
+
+/*
+抽象类中不一定包含抽象方法，包含抽象方法的类一定是抽象类。
+抽象类中既可以有抽象方法，也可以有普通方法。
+如果你发现在一个类中 存在方法是抽象的，那这个类也是抽象的。
+*/

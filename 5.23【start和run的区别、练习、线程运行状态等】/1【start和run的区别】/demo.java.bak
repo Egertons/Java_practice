@@ -1,0 +1,32 @@
+/*
+start 和 run 的区别
+*/
+public class demo
+{
+	public static void main(String[] args)
+	{
+		h a = new h();
+		a.start();
+	}
+}
+
+/*
+为什么要覆盖run方法呢？
+		该类就定义了一个功能，用于存储线程要运行的代码。该存储功能就是run方法。
+				相当于另一个主函数。
+		目的：将自定义的代码存储在run方法中，让线程运行。
+		
+
+在启动线程的start方法中。
+		该处不能把start改成直接执行run方法。
+				否则被创建的线程根本就没有执行（只有start方法才能启动线程）
+						这样直接写run方法的本质就是，还是单线程程序在运行，在JVM读到run方法时是主函数在去执行该部分代码，而不是新建立的线程在同时分享CPU资源。
+*/
+
+class h extends Thread
+{
+	public void run()
+	{
+		System.out.println(" Thread run ");
+	}
+}

@@ -1,0 +1,14 @@
+public class array
+{
+	public static void main(String[] args)
+	{
+		int[] arr = {88,76,98,1,43,21};
+
+		ArrayTool.print(ArrayTool.getMax(arr));
+		
+		ArrayTool.selectSort(arr);
+		
+		ArrayTool.printarray(arr);
+	
+	}
+}
